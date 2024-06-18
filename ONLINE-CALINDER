@@ -1,0 +1,25 @@
+<?php 
+// تحديد منطقة التوقيت (القاهرة)
+$timezone = 'Africa/Cairo';
+
+// الحصول على التاريخ والوقت الحاليين
+$now = new DateTime('now', new DateTimeZone($timezone));
+
+// تحويل التاريخ والوقت إلى تنسيق JSON
+$jsonData = [
+    'Y' => $now->format('Y'),
+
+    'm' => $now->format('m'),
+
+    'd' => $now->format('d'),
+
+    'H' => $now->format('H'),
+
+    'i' => $now->format('i'),
+
+    's' => $now->format('s'),
+];
+
+// عرض البيانات في شكل JSON
+echo json_encode($jsonData);
+
