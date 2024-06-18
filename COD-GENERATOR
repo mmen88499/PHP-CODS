@@ -1,0 +1,27 @@
+<?php
+
+// دالة لإنشاء رمز عشوائي
+function generateRandomCode($length = 12) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $code = '';
+    for ($i = 0; $i < $length; $i++) {
+        $code .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $code;
+}
+
+// إنشاء الكود الكامل
+$code = 'PLARX_PROP_' . generateRandomCode();
+
+// إنشاء مصفوفة JSON
+$data = array(
+    'code' => $code
+);
+
+// تحويل المصفوفة إلى JSON
+$json = json_encode($data);
+
+// إخراج JSON
+echo $json;
+
+?>
