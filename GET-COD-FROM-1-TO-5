@@ -1,0 +1,21 @@
+<?php
+
+// تحديد الحد الأقصى للرقم
+$maxNumber = 5;
+
+// توليد رقم عشوائي بين 1 و 5
+$randomNumber = rand(1, $maxNumber);
+
+// إنشاء مصفوفة لتخزين البيانات
+$output = array(
+    "selected_number" => $randomNumber
+);
+
+// تحويل المصفوفة إلى تنسيق JSON
+$jsonData = json_encode($output);
+
+// إرسال البيانات كـ JSON
+header('Content-type: application/json');
+echo $jsonData;
+
+?>
